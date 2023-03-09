@@ -6,7 +6,10 @@
 // import ExampleFor from './components/ExampleFor.vue';
 // import ClassBindVue from './components/ClassBind.vue';
 // import CycleOption from './components/CycleOption.vue';
-import PostList from './components/PostList.vue';
+// import PostList from './components/PostList.vue';
+// import ComputedExample from './components/ComputedExample.vue';
+import ComputedPractica from './components/ComputedPractica.vue';
+
 </script>
 <template>
   <!-- <PostContainer/> -->
@@ -15,8 +18,10 @@ import PostList from './components/PostList.vue';
   <!-- <ExampleSelective /> -->
   <!-- <ExampleFor /> -->
   <!-- <ClassBindVue /> -->
-  <PostList />
-  <CycleOption />
+  <!-- <PostList /> -->
+  <!-- <CycleOption /> -->
+  <!-- <ComputedExample /> -->
+  <ComputedPractica />
 </template>
 <style scoped>
   

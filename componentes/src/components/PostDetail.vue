@@ -6,31 +6,28 @@
         <button type="button" @click="handleClick()">Di Hola</button>
     </div>
 </template>
-<script>
-    import { defineComponent, ref } from 'vue';
-    export default defineComponent({
-        name:'PostDetail',
-        props: {
-            title: {
-                type: String,
-                required: true
-            },
-            content: {
-                type: String,
-                required: false,
-                default: "Este post no tiene contenido"
-            }
-        },
-        emits: ["sayHi"],
-        setup(props, {emit}) {
-            const handleClick = () => {
-                emit('sayHi', message.value)
-            }
+<script setup>
+    import { defineEmits, defineProps, defineComponent, ref } from 'vue';
 
-            let message = ref('')
-            return {handleClick, message,props}
+    const props = defineProps({
+        title: {
+            type: String,
+            required: true
+        },
+        content: {
+            type: String,
+            required: false,
+            default: "Este post no tiene contenido"
         }
     })
+
+    const emit = defineEmits(['sayHi'])
+
+    let message = ref("");
+
+    const handleClick = () => {
+        emit('sayHi', message.value)
+    }
 </script>
 <style scoped>
     .post {
