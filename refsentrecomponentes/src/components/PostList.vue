@@ -30,11 +30,12 @@ let info = [
     { 
         title: 'Este es el post 5',
         content: "Texto de ejemplo 5"
-    }]
-
-    function showAlert(msg) {
-        alert(msg)
     }
+]
+
+function showAlert(msg) {
+    alert(msg)
+}
 </script>
 <style scoped>
     .container {
