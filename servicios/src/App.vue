@@ -1,9 +1,11 @@
 <script setup>
-  import PostList from './components/PostList.vue'
+  import PostDetailView from './views/PostDetailView.vue';
+  import PostListView from './views/PostListView.vue'
 </script>
 
 <template>
-  <PostList />
+  <!-- <PostListView /> -->
+  <router-view />
 </template>
 
 <style scoped>
