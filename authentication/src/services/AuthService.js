@@ -1,6 +1,6 @@
 import {ref} from 'vue'
 
-class AuthService {
+export default class AuthService {
     constructor() {
         this.jwt = ref('')
         this.error = ref('')

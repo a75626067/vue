@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div class="container">
         <form>
             <div class="form-group">
@@ -10,26 +10,24 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="password">
             </div>
-            <button type="submit" class="btn btn-primary mt-2" @click="authUser">Submit</button>
+            <button type="button" class="btn btn-primary mt-2" @click="authUser">Submit</button>
         </form>
     </div>
 </template>
-
 <script setup>
-    import { ref } from 'vue';
-    import AuthService from '../services/AuthService'
+    import {ref} from 'vue'
+    import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+    // import {getAuth} from 'firebase'
 
     let email = ref('')
     let password = ref('')
 
-    const authUser = async () => {
-        const auth = new AuthService()
-        const success = await auth.login(email.value, password.value)
-
-        if(success) {
+    const authUser = () => {
+        const auth = getAuth()
+        signInWithEmailAndPassword(auth, email.value, password.value)
+        .then(() => {
             alert("Éxito!")
-        } else {
-            alert("Login incorrecto!")
-        }
+        })
+        .catch((error) => console.log(error))
     }
 </script>

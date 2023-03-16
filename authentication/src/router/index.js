@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AuthView from '@/views/AuthView.vue'
+import AuthView from '../views/AuthView.vue'
+import FirebaseView from '../views/FirebaseView.vue'
+import SocialView from '../views/SocialView.vue'
 
 const routes = [
   {
@@ -12,6 +14,16 @@ const routes = [
     path: '/auth',
     name: 'auth',
     component: AuthView
+  },
+  {
+    path:'/firebase',
+    name: 'firebase',
+    component: FirebaseView
+  },
+  {
+    path:'/social',
+    name: 'social',
+    component: SocialView
   }
 ]
 
